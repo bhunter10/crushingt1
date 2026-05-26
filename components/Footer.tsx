@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { navItems } from "@/lib/content";
+import { ExternalLink } from "lucide-react";
+import { navItems, socialLinks } from "@/lib/content";
 
 export function Footer() {
   return (
@@ -20,6 +21,28 @@ export function Footer() {
               {item.label}
             </Link>
           ))}
+        </div>
+        <div className="md:col-span-2">
+          <p className="text-sm font-black uppercase tracking-wide text-amber">Social</p>
+          <div className="mt-3 flex flex-wrap gap-3">
+            {socialLinks.map((item) => {
+              const Icon = item.icon;
+
+              return (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-md bg-white/10 px-3 py-2 text-sm font-bold text-white hover:bg-white/20"
+                >
+                  <Icon className="h-4 w-4" aria-hidden="true" />
+                  {item.label}
+                  <ExternalLink className="h-4 w-4" aria-hidden="true" />
+                </a>
+              );
+            })}
+          </div>
         </div>
       </div>
     </footer>

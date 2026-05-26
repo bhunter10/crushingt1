@@ -26,7 +26,7 @@ export default function Home() {
                 <PlayCircle className="h-4 w-4" />
                 Follow the Journey
               </Link>
-              <Link href="/help" className="btn btn-secondary">
+              <Link href="/signs-of-type-1-diabetes" className="btn btn-secondary">
                 <HeartPulse className="h-4 w-4" />
                 Learn the Signs
               </Link>

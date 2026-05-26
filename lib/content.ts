@@ -3,6 +3,7 @@ import {
   CalendarHeart,
   HandHeart,
   HeartPulse,
+  Instagram,
   Megaphone,
   Newspaper,
   PlayCircle,
@@ -22,6 +23,15 @@ export const navItems = [
   { href: "/donations", label: "Donations" },
   { href: "/shop", label: "Shop" },
   { href: "/contact", label: "Contact" }
+];
+
+export const socialLinks = [
+  {
+    href: "https://www.instagram.com/crushingt1/",
+    label: "Instagram",
+    icon: Instagram,
+    text: "Short-form education, community updates, and campaign videos from CrushingT1."
+  }
 ];
 
 export const awarenessFacts = [

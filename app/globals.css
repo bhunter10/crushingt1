@@ -98,6 +98,12 @@ a {
   transform: translateY(-1px);
 }
 
+.btn svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex: 0 0 auto;
+}
+
 .btn-primary {
   background: #f2644b;
   color: #ffffff;
@@ -140,6 +146,11 @@ a {
 
 .mobile-menu-button::-webkit-details-marker {
   display: none;
+}
+
+.mobile-menu-button svg {
+  width: 1.4rem;
+  height: 1.4rem;
 }
 
 .hero-media {

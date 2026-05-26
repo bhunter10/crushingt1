@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { HandHeart, Menu } from "lucide-react";
 import { navItems } from "@/lib/content";
@@ -5,14 +6,19 @@ import { navItems } from "@/lib/content";
 export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-paper/95 backdrop-blur">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-6 lg:px-8" aria-label="Main navigation">
-        <Link href="/" className="flex items-center gap-3 text-lg font-black text-ink">
-          <span className="logo-mark" aria-hidden="true">
-            CT1
-          </span>
-          <span>CrushingT1</span>
+      <nav className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3 sm:px-6 lg:px-8" aria-label="Main navigation">
+        <Link href="/" className="flex min-w-0 items-center" aria-label="CrushingT1 home">
+          <Image
+            src="/images/logo-crushing-t1-wide.png"
+            alt="CrushingT1"
+            width={900}
+            height={347}
+            priority
+            sizes="(min-width: 1280px) 240px, (min-width: 1024px) 190px, (min-width: 640px) 220px, 180px"
+            className="h-auto w-[180px] flex-none object-contain sm:w-[220px] lg:w-[190px] xl:w-[240px]"
+          />
         </Link>
-        <div className="hidden items-center gap-5 lg:flex">
+        <div className="hidden items-center gap-4 lg:flex xl:gap-5">
           {navItems.slice(1).map((item) => (
             <Link key={item.href} href={item.href} className="nav-link">
               {item.label}
