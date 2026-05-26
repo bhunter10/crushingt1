@@ -120,6 +120,39 @@ export const videos = [
   }
 ];
 
+export const instagramVideos = [
+  {
+    title: "Hot dogs",
+    caption: "A quick Crushing T1 Reel from the Instagram feed.",
+    href: "https://www.instagram.com/reel/DYxYx-UpdDK/"
+  },
+  {
+    title: "Only six years old",
+    caption: "A short social clip helping people understand the reality of Type 1 diabetes.",
+    href: "https://www.instagram.com/reel/DYvQoSyPceP/"
+  },
+  {
+    title: "Date night",
+    caption: "A recent Crushing T1 Reel from Instagram.",
+    href: "https://www.instagram.com/reel/DYqY2xHsb74/"
+  },
+  {
+    title: "Eledon kidney transplant trial",
+    caption: "A research-focused update shared through the Crushing T1 Instagram feed.",
+    href: "https://www.instagram.com/reel/DYn0o33szLI/"
+  },
+  {
+    title: "Call to action T1D Community",
+    caption: "A community call-to-action from the Instagram social feed.",
+    href: "https://www.instagram.com/reel/DYi-WgjN6l0/"
+  },
+  {
+    title: "New Dexcom sensor",
+    caption: "A practical T1D technology update from Instagram.",
+    href: "https://www.instagram.com/reel/DYfx6qih4gw/"
+  }
+];
+
 export const donationOptions = [
   {
     icon: HandHeart,
