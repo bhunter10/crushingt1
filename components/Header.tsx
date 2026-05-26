@@ -5,7 +5,7 @@ import { navItems } from "@/lib/content";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-paper/95 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white backdrop-blur">
       <nav className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3 sm:px-6 lg:px-8" aria-label="Main navigation">
         <Link href="/" className="flex min-w-0 items-center" aria-label="CrushingT1 home">
           <Image

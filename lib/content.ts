@@ -17,9 +17,7 @@ import {
 export const navItems = [
   { href: "/", label: "Home" },
   { href: "/history", label: "Our Story" },
-  { href: "/news", label: "Recent News" },
   { href: "/videos", label: "Videos" },
-  { href: "/help", label: "How You Can Help" },
   { href: "/donations", label: "Donations" },
   { href: "/shop", label: "Shop" },
   { href: "/contact", label: "Contact" }
@@ -124,12 +122,14 @@ export const instagramVideos = [
   {
     title: "Hot dogs",
     caption: "A quick Crushing T1 Reel from the Instagram feed.",
-    href: "https://www.instagram.com/reel/DYxYx-UpdDK/"
+    href: "https://www.instagram.com/reel/DYxYx-UpdDK/",
+    poster: "/images/instagram-hot-dogs.jpg"
   },
   {
     title: "Only six years old",
     caption: "A short social clip helping people understand the reality of Type 1 diabetes.",
-    href: "https://www.instagram.com/reel/DYvQoSyPceP/"
+    href: "https://www.instagram.com/reel/DYvQoSyPceP/",
+    poster: "/images/instagram-only-six.jpg"
   },
   {
     title: "Date night",
