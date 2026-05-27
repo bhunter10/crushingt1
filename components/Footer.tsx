@@ -1,6 +1,10 @@
 import Link from "next/link";
-import { ExternalLink } from "lucide-react";
 import { navItems, socialLinks } from "@/lib/content";
+
+const socialButtonStyles = [
+  "bg-[#ff0000] text-white hover:bg-[#d90000]",
+  "bg-gradient-to-br from-[#833ab4] via-[#fd1d1d] to-[#fcb045] text-white hover:brightness-110"
+];
 
 export function Footer() {
   return (
@@ -20,9 +24,9 @@ export function Footer() {
           ))}
         </div>
         <div className="md:col-span-2">
-          <p className="text-sm font-black uppercase tracking-wide text-amber">Social</p>
+          <p className="text-sm font-black uppercase tracking-wide text-white">Follow us</p>
           <div className="mt-3 flex flex-wrap gap-3">
-            {socialLinks.map((item) => {
+            {socialLinks.map((item, index) => {
               const Icon = item.icon;
 
               return (
@@ -31,11 +35,11 @@ export function Footer() {
                   href={item.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-md bg-white/10 px-3 py-2 text-sm font-bold text-white hover:bg-white/20"
+                  aria-label={item.label}
+                  title={item.label}
+                  className={`inline-flex h-11 w-11 items-center justify-center rounded-full shadow-sm transition hover:-translate-y-0.5 ${socialButtonStyles[index % socialButtonStyles.length]}`}
                 >
-                  <Icon className="h-4 w-4" aria-hidden="true" />
-                  {item.label}
-                  <ExternalLink className="h-4 w-4" aria-hidden="true" />
+                  <Icon className="h-5 w-5" aria-hidden="true" />
                 </a>
               );
             })}

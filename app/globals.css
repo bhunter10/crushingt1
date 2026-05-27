@@ -251,39 +251,45 @@ a {
   z-index: 1;
 }
 
-.news-hero {
+.news-hero,
+.shop-hero {
   position: relative;
   isolation: isolate;
   overflow: hidden;
   background:
     linear-gradient(90deg, rgba(6, 18, 31, 0.88) 0%, rgba(6, 18, 31, 0.62) 42%, rgba(6, 18, 31, 0.18) 100%),
     linear-gradient(180deg, rgba(6, 18, 31, 0.12), rgba(6, 18, 31, 0.24)),
-    url("/images/news-hero-data-pulse-wide.png") right bottom / cover no-repeat,
+    var(--page-hero-image, url("/images/news-hero-data-pulse-banner.png")) right bottom / cover no-repeat,
     linear-gradient(135deg, #06121f 0%, #082431 48%, #063342 100%);
 }
 
 .news-hero::before,
-.news-hero::after {
+.news-hero::after,
+.shop-hero::before,
+.shop-hero::after {
   position: absolute;
   inset: 0;
   content: "";
   pointer-events: none;
 }
 
-.news-hero::before {
+.news-hero::before,
+.shop-hero::before {
   z-index: -2;
   background:
     radial-gradient(circle at 72% 54%, rgba(0, 166, 251, 0.18), transparent 20rem),
     radial-gradient(circle at 84% 78%, rgba(38, 196, 133, 0.16), transparent 18rem);
 }
 
-.news-hero::after {
+.news-hero::after,
+.shop-hero::after {
   z-index: -1;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 45%, rgba(0, 0, 0, 0.24));
 }
 
-.news-hero > div {
+.news-hero > div,
+.shop-hero > div {
   position: relative;
   z-index: 1;
 }

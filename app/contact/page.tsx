@@ -6,9 +6,11 @@ export default function ContactPage() {
   return (
     <>
       <PageHero
-        eyebrow="Contact"
-        title="Reach out about stories, sponsorships, volunteering, or future support."
-        intro="Tell the team how you would like to get involved, share your story, or support a future awareness campaign."
+        variant="news"
+        eyebrow=""
+        title="Contact"
+        intro="Tell us how you would like to get involved, share your story, or support a future awareness campaign."
+        backgroundImage="/images/hero-contact-banner.png"
       />
       <Section title="Send a message">
         <form action="mailto:hello@crushingt1.com" method="post" encType="text/plain" className="grid gap-5 rounded-lg bg-white p-6 shadow-soft md:grid-cols-2">
