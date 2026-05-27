@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, HeartPulse, PlayCircle, ShieldCheck } from "lucide-react";
+import { ArrowRight, HeartPulse, Newspaper, ShieldCheck } from "lucide-react";
 import { Section } from "@/components/Section";
 
 export default function Home() {
@@ -26,9 +26,9 @@ export default function Home() {
                 Support CrushingT1
                 <ArrowRight className="h-4 w-4" />
               </Link>
-              <Link href="/videos" className="btn border-white/25 bg-white/10 text-white hover:bg-white/15">
-                <PlayCircle className="h-4 w-4" />
-                Watch Stories
+              <Link href="/news" className="btn border-white/25 bg-white/10 text-white hover:bg-white/15">
+                <Newspaper className="h-4 w-4" />
+                News
               </Link>
               <Link href="/news" className="btn border-white/25 bg-white/10 text-white hover:bg-white/15">
                 <HeartPulse className="h-4 w-4" />

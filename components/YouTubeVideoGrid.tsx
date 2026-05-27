@@ -1,5 +1,6 @@
 "use client";
 
+import { PlayCircle } from "lucide-react";
 import { useEffect, useState } from "react";
 
 type YouTubeVideo = {
@@ -15,6 +16,7 @@ type YouTubeVideoGridProps = {
 
 export function YouTubeVideoGrid({ playlistId }: YouTubeVideoGridProps) {
   const [videos, setVideos] = useState<YouTubeVideo[]>([]);
+  const [activeVideoId, setActiveVideoId] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
 
@@ -55,9 +57,9 @@ export function YouTubeVideoGrid({ playlistId }: YouTubeVideoGridProps) {
 
   if (isLoading) {
     return (
-      <div className="grid gap-5 md:grid-cols-2">
+      <div className="youtube-video-grid">
         {Array.from({ length: 4 }).map((_, index) => (
-          <div key={index} className="aspect-video animate-pulse rounded-lg bg-slate-200" />
+          <div key={index} className="youtube-video-skeleton" />
         ))}
       </div>
     );
@@ -65,18 +67,18 @@ export function YouTubeVideoGrid({ playlistId }: YouTubeVideoGridProps) {
 
   if (hasError || videos.length === 0) {
     return (
-      <article className="card overflow-hidden p-0">
+      <article className="youtube-video-card youtube-video-card-featured">
         <iframe
-          className="aspect-video w-full"
-          src={`https://www.youtube-nocookie.com/embed/videoseries?list=${playlistId}&rel=0`}
-          title="CrushingT1 YouTube playlist"
+          className="youtube-video-frame"
+          src={`https://www.youtube-nocookie.com/embed/videoseries?list=${playlistId}&rel=0&modestbranding=1&playsinline=1&showinfo=0`}
+          title="CrushingT1 YouTube videos"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerPolicy="strict-origin-when-cross-origin"
           allowFullScreen
         />
-        <div className="p-5">
-          <h3 className="text-lg font-black leading-snug text-ink">CrushingT1 YouTube playlist</h3>
-          <p className="mt-2 leading-7 text-slate-700">
+        <div className="youtube-video-copy">
+          <h3>CrushingT1 YouTube playlist</h3>
+          <p>
             Use the playlist controls in the embedded player to browse the latest videos.
           </p>
         </div>
@@ -85,22 +87,33 @@ export function YouTubeVideoGrid({ playlistId }: YouTubeVideoGridProps) {
   }
 
   return (
-    <div className="grid gap-5 md:grid-cols-2">
+    <div className="youtube-video-grid">
       {videos.map((video) => (
-        <article key={video.id} className="card overflow-hidden p-0">
-          <iframe
-            className="aspect-video w-full"
-            src={`https://www.youtube-nocookie.com/embed/${video.id}?rel=0`}
-            title={video.title}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          />
-          <div className="p-5">
-            <h3 className="text-lg font-black leading-snug text-ink">{video.title}</h3>
-            <a className="mt-3 inline-flex font-bold text-ocean hover:text-coral" href={video.href} target="_blank" rel="noreferrer">
-              Watch on YouTube
-            </a>
+        <article key={video.id} className="youtube-video-card">
+          {activeVideoId === video.id ? (
+            <iframe
+              className="youtube-video-frame"
+              src={`https://www.youtube-nocookie.com/embed/${video.id}?rel=0&modestbranding=1&playsinline=1&autoplay=1`}
+              title="CrushingT1 YouTube video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          ) : (
+            <button
+              className="youtube-video-poster"
+              type="button"
+              onClick={() => setActiveVideoId(video.id)}
+              aria-label={`Play ${video.title}`}
+            >
+              <img src={`https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`} alt="" loading="lazy" />
+              <span className="youtube-video-play">
+                <PlayCircle aria-hidden="true" />
+              </span>
+            </button>
+          )}
+          <div className="youtube-video-copy">
+            <h3>{video.title}</h3>
           </div>
         </article>
       ))}

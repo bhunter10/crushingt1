@@ -1,21 +1,45 @@
+import Link from "next/link";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import { Card } from "@/components/Card";
-import { PageHero } from "@/components/PageHero";
 import { Section } from "@/components/Section";
-import { newsItems, researchAngles } from "@/lib/content";
+import { YouTubeVideoGrid } from "@/components/YouTubeVideoGrid";
+import { researchAngles } from "@/lib/content";
+
+const youtubeUploadsPlaylistId = "UU_8544wP0TvUpCB8XRsCIvw";
 
 export default function NewsPage() {
   return (
     <>
-      <PageHero
-        eyebrow="Recent News"
-        title="Updates that make T1D easier to understand."
-        intro="Use this page for awareness campaigns, foundation milestones, research explainers, local events, and supporter stories."
-      />
-      <Section title="Latest updates">
-        <div className="grid gap-5 md:grid-cols-3">
-          {newsItems.map((item) => (
-            <Card key={item.title} meta={`${item.category} / ${item.date}`} title={item.title} text={item.text} />
-          ))}
+      <section className="news-hero">
+        <div className="mx-auto max-w-6xl px-5 py-14 sm:px-6 lg:px-8 lg:py-20">
+          <h1 className="mt-4 max-w-4xl text-5xl font-black leading-none text-white sm:text-6xl lg:text-7xl">
+            News
+          </h1>
+          <p className="mt-6 max-w-2xl text-xl leading-9 text-slate-200">
+            Updates, research explainers, awareness campaigns, and foundation milestones.
+          </p>
+        </div>
+      </section>
+      <Section
+        title="Latest videos"
+        intro=""
+        className="bg-white"
+      >
+        <YouTubeVideoGrid playlistId={youtubeUploadsPlaylistId} />
+        <div className="youtube-video-actions">
+          <a
+            className="btn btn-secondary"
+            href={`https://www.youtube.com/playlist?list=${youtubeUploadsPlaylistId}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Open full playlist
+            <ExternalLink aria-hidden="true" />
+          </a>
+          <a className="btn btn-primary" href="https://www.youtube.com/@CrushingT1" target="_blank" rel="noreferrer">
+            Visit YouTube
+            <ExternalLink aria-hidden="true" />
+          </a>
         </div>
       </Section>
       <Section

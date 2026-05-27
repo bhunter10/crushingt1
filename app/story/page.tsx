@@ -13,10 +13,6 @@ export default function StoryPage() {
           <p className="mt-6 max-w-2xl text-xl leading-9 text-slate-200">
             CrushingT1 was created to make Type 1 diabetes more visible, more understood, and less isolating for families facing the diagnosis.
           </p>
-          <Link href="/donations" className="btn btn-primary mt-8">
-            Support the mission
-            <ArrowRight className="h-4 w-4" />
-          </Link>
         </div>
       </section>
 
@@ -26,14 +22,11 @@ export default function StoryPage() {
         intro="CrushingT1 turns a family's experience with Type 1 diabetes into education, advocacy, and momentum for a better future."
       >
         <div className="story-narrative">
-          <div className="story-narrative-accent" aria-hidden="true">
-            <Sparkles className="h-6 w-6" />
-          </div>
           <div className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr]">
             <div>
               <p className="text-sm font-black uppercase tracking-[0.12em] text-coral">Why it matters</p>
               <h2 className="mt-3 text-3xl font-black leading-tight text-ink sm:text-4xl">
-                No family should have to learn Type 1 diabetes in the dark.
+                No family should have to learn about Type 1 diabetes in the dark.
               </h2>
             </div>
             <div className="space-y-5 text-lg leading-9 text-slate-700">
