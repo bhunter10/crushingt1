@@ -1,6 +1,6 @@
 "use client";
 
-import { PlayCircle } from "lucide-react";
+import { Play } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -94,8 +94,8 @@ export function YouTubeVideoGrid({ playlistId }: YouTubeVideoGridProps) {
           {activeVideoId === video.id ? (
             <iframe
               className="youtube-video-frame"
-              src={`https://www.youtube-nocookie.com/embed/${video.id}?rel=0&modestbranding=1&playsinline=1&autoplay=1`}
-              title="CrushingT1 YouTube video"
+              src={`https://www.youtube-nocookie.com/embed/${video.id}?rel=0&modestbranding=1&playsinline=1&autoplay=1&mute=1`}
+              title={video.title}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
@@ -113,8 +113,8 @@ export function YouTubeVideoGrid({ playlistId }: YouTubeVideoGridProps) {
                 width={480}
                 height={360}
               />
-              <span className="youtube-video-play">
-                <PlayCircle aria-hidden="true" />
+              <span className="youtube-video-play" aria-hidden="true">
+                <Play className="youtube-video-play-icon" />
               </span>
             </button>
           )}
