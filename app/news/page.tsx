@@ -1,4 +1,3 @@
-import { ExternalLink } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { Section } from "@/components/Section";
 import { YouTubeVideoGrid } from "@/components/YouTubeVideoGrid";
@@ -29,11 +28,9 @@ export default function NewsPage() {
             rel="noreferrer"
           >
             Open full playlist
-            <ExternalLink aria-hidden="true" />
           </a>
           <a className="btn btn-primary" href="https://www.youtube.com/@CrushingT1" target="_blank" rel="noreferrer">
             Visit YouTube
-            <ExternalLink aria-hidden="true" />
           </a>
         </div>
       </Section>
