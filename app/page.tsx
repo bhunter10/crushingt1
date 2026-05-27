@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, HeartPulse, PlayCircle } from "lucide-react";
+import { ArrowRight, Droplet, HeartPulse, PlayCircle, ShieldCheck } from "lucide-react";
 import { Card } from "@/components/Card";
 import { Section } from "@/components/Section";
 import { awarenessFacts, helpActions } from "@/lib/content";
@@ -10,7 +10,7 @@ export default function Home() {
       <section className="bg-paper">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-12 sm:px-6 lg:grid-cols-[1fr_0.9fr] lg:px-8 lg:py-18">
           <div>
-            <p className="eyebrow">Type 1 diabetes awareness foundation</p>
+            <p className="hero-kicker">Educating <span /> Supporting <span /> Empowering</p>
             <h1 className="mt-4 text-5xl font-black leading-none text-ink sm:text-6xl lg:text-7xl">
               CrushingT1
             </h1>
@@ -32,15 +32,33 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="hero-media">
-            <div className="absolute bottom-5 left-5 right-5 grid gap-3 sm:grid-cols-2">
-              <div className="meter">
-                <span className="text-sm font-black uppercase text-ocean">Awareness focus</span>
-                <strong>Symptoms, stories, support</strong>
+          <div className="hero-panel" aria-label="CrushingT1 awareness highlights">
+            <div className="hero-panel-rainbow" />
+            <div className="relative z-10 grid gap-5">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className="text-sm font-black uppercase tracking-[0.12em] text-ocean">Awareness focus</p>
+                  <h2 className="mt-2 text-3xl font-black leading-tight text-ink">Know the signs before crisis hits.</h2>
+                </div>
+                <div className="hero-drop">
+                  <Droplet className="h-8 w-8" />
+                </div>
               </div>
-              <div className="meter">
-                <span className="text-sm font-black uppercase text-coral">Donation status</span>
-                <strong>Preparing a responsible path</strong>
+              <div className="grid gap-3 sm:grid-cols-2">
+                <div className="meter">
+                  <HeartPulse className="h-6 w-6 text-coral" />
+                  <span className="text-sm font-black uppercase text-coral">Recognize</span>
+                  <strong>Thirst, weight loss, fatigue, frequent urination</strong>
+                </div>
+                <div className="meter">
+                  <ShieldCheck className="h-6 w-6 text-ocean" />
+                  <span className="text-sm font-black uppercase text-ocean">Respond</span>
+                  <strong>Education, support, and practical next steps</strong>
+                </div>
+              </div>
+              <div className="rounded-lg border border-slate-200 bg-white p-5">
+                <p className="text-sm font-black uppercase tracking-[0.12em] text-slate-500">Until we crush Type 1 diabetes together</p>
+                <div className="mt-4 h-3 rounded-full bg-[linear-gradient(90deg,#f72585,#ffb703,#26c485,#00a6fb,#7b2ff7)]" />
               </div>
             </div>
           </div>

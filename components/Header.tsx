@@ -14,13 +14,13 @@ export function Header() {
       <nav className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3 sm:px-6 lg:px-8" aria-label="Main navigation">
         <Link href="/" className="flex min-w-0 items-center" aria-label="CrushingT1 home">
           <Image
-            src="/images/logo-crushing-t1-wide.png"
+            src="/images/logo-crushing-header.png"
             alt="CrushingT1"
-            width={900}
-            height={347}
+            width={585}
+            height={210}
             priority
-            sizes="(min-width: 1280px) 240px, (min-width: 1024px) 190px, (min-width: 640px) 220px, 180px"
-            className="h-auto w-[180px] flex-none object-contain sm:w-[220px] lg:w-[190px] xl:w-[240px]"
+            sizes="(min-width: 1280px) 160px, (min-width: 1024px) 140px, (min-width: 640px) 152px, 130px"
+            className="h-auto w-[130px] flex-none object-contain sm:w-[152px] lg:w-[140px] xl:w-[160px]"
           />
         </Link>
         <div className="hidden items-center gap-4 lg:flex xl:gap-5">
