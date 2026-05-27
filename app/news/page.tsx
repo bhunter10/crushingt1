@@ -1,9 +1,6 @@
-import Link from "next/link";
-import { ArrowRight, ExternalLink } from "lucide-react";
-import { Card } from "@/components/Card";
+import { ExternalLink } from "lucide-react";
 import { Section } from "@/components/Section";
 import { YouTubeVideoGrid } from "@/components/YouTubeVideoGrid";
-import { researchAngles } from "@/lib/content";
 
 const youtubeUploadsPlaylistId = "UU_8544wP0TvUpCB8XRsCIvw";
 
@@ -40,17 +37,6 @@ export default function NewsPage() {
             Visit YouTube
             <ExternalLink aria-hidden="true" />
           </a>
-        </div>
-      </Section>
-      <Section
-        eyebrow="Future research awareness"
-        title="New angles that build donor confidence"
-        intro="Future supporters need more than inspiration. They need to understand why the work matters and how their support can move education and research forward."
-      >
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {researchAngles.map((angle) => (
-            <Card key={angle.title} icon={angle.icon} title={angle.title} text={angle.text} />
-          ))}
         </div>
       </Section>
     </>

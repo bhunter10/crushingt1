@@ -258,7 +258,7 @@ a {
   background:
     linear-gradient(90deg, rgba(6, 18, 31, 0.88) 0%, rgba(6, 18, 31, 0.62) 42%, rgba(6, 18, 31, 0.18) 100%),
     linear-gradient(180deg, rgba(6, 18, 31, 0.12), rgba(6, 18, 31, 0.24)),
-    url("/images/news-hero-data-pulse-wide.png") center 56% / cover no-repeat,
+    url("/images/news-hero-data-pulse-wide.png") right bottom / cover no-repeat,
     linear-gradient(135deg, #06121f 0%, #082431 48%, #063342 100%);
 }
 
