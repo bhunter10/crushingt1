@@ -11,7 +11,8 @@ import {
   Shirt,
   Sparkles,
   Users,
-  WalletCards
+  WalletCards,
+  Youtube
 } from "lucide-react";
 
 export const navItems = [
@@ -24,6 +25,12 @@ export const navItems = [
 ];
 
 export const socialLinks = [
+  {
+    href: "https://www.youtube.com/@CrushingT1",
+    label: "YouTube",
+    icon: Youtube,
+    text: "Latest uploads, Shorts, awareness clips, and longer education videos from CrushingT1."
+  },
   {
     href: "https://www.instagram.com/crushingt1/",
     label: "Instagram",

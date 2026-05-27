@@ -1,7 +1,10 @@
 import { ExternalLink } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { Section } from "@/components/Section";
+import { YouTubeVideoGrid } from "@/components/YouTubeVideoGrid";
 import { socialLinks } from "@/lib/content";
+
+const youtubeUploadsPlaylistId = "UU_8544wP0TvUpCB8XRsCIvw";
 
 export default function VideosPage() {
   return (
@@ -9,8 +12,30 @@ export default function VideosPage() {
       <PageHero
         eyebrow="Videos"
         title="Social-first education people can share quickly."
-        intro="A flexible video hub for TikTok, YouTube, Instagram, Facebook, livestreams, and education clips."
+        intro="Watch the newest CrushingT1 YouTube uploads, then follow the social channels for more education and campaign clips."
       />
+      <Section
+        eyebrow="YouTube"
+        title="Latest videos from CrushingT1"
+        intro="The newest uploads appear here automatically from the CrushingT1 YouTube channel."
+      >
+        <YouTubeVideoGrid playlistId={youtubeUploadsPlaylistId} />
+        <div className="mt-5 flex flex-wrap gap-3">
+          <a
+            className="btn btn-secondary"
+            href={`https://www.youtube.com/playlist?list=${youtubeUploadsPlaylistId}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Open full playlist
+            <ExternalLink aria-hidden="true" />
+          </a>
+          <a className="btn btn-primary" href="https://www.youtube.com/@CrushingT1" target="_blank" rel="noreferrer">
+            Visit YouTube
+            <ExternalLink aria-hidden="true" />
+          </a>
+        </div>
+      </Section>
       <Section
         eyebrow="Channels"
         title="Follow the awareness channels"
