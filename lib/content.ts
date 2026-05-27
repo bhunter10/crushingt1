@@ -17,7 +17,7 @@ import {
 
 export const navItems = [
   { href: "/", label: "Home" },
-  { href: "/history", label: "Our Story" },
+  { href: "/story", label: "Our Story" },
   { href: "/videos", label: "Videos" },
   { href: "/donations", label: "Donations" },
   { href: "/shop", label: "Shop" },
