@@ -9,10 +9,7 @@ export function Footer() {
         <div>
           <p className="text-2xl font-black">CrushingT1</p>
           <p className="mt-3 max-w-xl leading-7 text-slate-300">
-            A Type 1 diabetes awareness foundation in progress, built to educate families, amplify lived experience, and prepare a responsible path for future support.
-          </p>
-          <p className="mt-4 text-sm text-slate-400">
-            CrushingT1 is not yet a registered nonprofit. Donation language and receipts will be updated when formal status or a fiscal sponsor is in place.
+            A Type 1 diabetes awareness foundation built to educate families, progress research, and build awareness.
           </p>
         </div>
         <div className="grid grid-cols-2 gap-2">

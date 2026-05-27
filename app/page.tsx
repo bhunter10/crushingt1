@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { ArrowRight, HeartPulse, Mail, PlayCircle } from "lucide-react";
+import { ArrowRight, HeartPulse, PlayCircle } from "lucide-react";
 import { Card } from "@/components/Card";
 import { Section } from "@/components/Section";
-import { awarenessFacts, helpActions, newsItems, videos } from "@/lib/content";
+import { awarenessFacts, helpActions } from "@/lib/content";
 
 export default function Home() {
   return (
@@ -83,37 +83,6 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section
-        eyebrow="Video and news"
-        title="Built for social awareness"
-        intro="Short video, practical news, and shareable education are the fastest path to attention and community action."
-      >
-        <div className="grid gap-6 lg:grid-cols-2">
-          <div className="grid gap-5">
-            {videos.slice(0, 2).map((video) => (
-              <Card key={video.title} meta={video.type} title={video.title} text={video.text} />
-            ))}
-          </div>
-          <div className="grid gap-5">
-            {newsItems.slice(0, 2).map((item) => (
-              <Card key={item.title} meta={`${item.category} / ${item.date}`} title={item.title} text={item.text} />
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      <section className="bg-ocean">
-        <div className="mx-auto flex max-w-6xl flex-col gap-6 px-5 py-12 text-white sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
-          <div>
-            <p className="eyebrow text-amber">Stay close</p>
-            <h2 className="mt-2 text-3xl font-black">Get updates as CrushingT1 grows.</h2>
-          </div>
-          <Link href="/contact" className="btn bg-white text-ink">
-            <Mail className="h-4 w-4" />
-            Contact the team
-          </Link>
-        </div>
-      </section>
     </>
   );
 }
