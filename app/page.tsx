@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, BookOpen, Microscope, ShieldCheck } from "lucide-react";
+import { ArrowRight, FlaskConical, GraduationCap, Microscope } from "lucide-react";
 import { Section } from "@/components/Section";
 
 export default function Home() {
@@ -43,13 +43,17 @@ export default function Home() {
               </div>
               <div className="grid gap-3 sm:grid-cols-2">
                 <div className="meter">
-                  <BookOpen className="h-6 w-6 text-coral" />
-                  <span className="text-sm font-black uppercase text-coral">Educate</span>
+                  <span className="flex items-center gap-3 text-sm font-black uppercase text-coral">
+                    <GraduationCap className="h-8 w-8" />
+                    Education
+                  </span>
                   <strong>Clear Type 1 diabetes knowledge for families and communities</strong>
                 </div>
                 <div className="meter">
-                  <ShieldCheck className="h-6 w-6 text-ocean" />
-                  <span className="text-sm font-black uppercase text-ocean">Advance</span>
+                  <span className="flex items-center gap-3 text-sm font-black uppercase text-ocean">
+                    <FlaskConical className="h-8 w-8" />
+                    Research
+                  </span>
                   <strong>New research, care improvements, and breakthrough updates</strong>
                 </div>
               </div>

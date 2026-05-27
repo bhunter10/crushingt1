@@ -8,24 +8,21 @@ const socialButtonStyles = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-slate-200 bg-ink text-white">
-      <div className="mx-auto grid max-w-6xl gap-8 px-5 py-10 sm:px-6 md:grid-cols-[1.2fr_1fr] lg:px-8">
-        <div>
-          <p className="text-2xl font-black">CrushingT1</p>
-          <p className="mt-3 max-w-xl leading-7 text-slate-300">
-            A Type 1 diabetes awareness foundation built to educate families, progress research, and build awareness.
-          </p>
-        </div>
-        <div className="grid grid-cols-2 gap-2">
-          {navItems.map((item) => (
-            <Link key={item.href} href={item.href} className="rounded-md px-2 py-2 text-sm font-semibold text-slate-200 hover:bg-white/10">
-              {item.label}
-            </Link>
-          ))}
-        </div>
-        <div className="md:col-span-2">
-          <p className="text-sm font-black uppercase tracking-wide text-white">Follow us</p>
-          <div className="mt-3 flex flex-wrap gap-3">
+    <footer className="border-t border-white/10 bg-black text-white">
+      <div className="mx-auto grid max-w-6xl gap-8 px-5 py-9 sm:px-6 md:grid-cols-[1fr_auto] lg:px-8">
+        <nav aria-label="Footer navigation">
+          <p className="text-sm font-black uppercase tracking-[0.12em] text-sky-200">Explore</p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {navItems.map((item) => (
+              <Link key={item.href} href={item.href} className="rounded-md border border-white/10 px-3 py-2 text-sm font-bold text-slate-100 transition hover:border-white/25 hover:bg-white/10">
+                {item.label}
+              </Link>
+            ))}
+          </div>
+        </nav>
+        <div className="md:text-right">
+          <p className="text-sm font-black uppercase tracking-[0.12em] text-white">Follow us</p>
+          <div className="mt-4 flex flex-wrap gap-3 md:justify-end">
             {socialLinks.map((item, index) => {
               const Icon = item.icon;
 
@@ -44,6 +41,9 @@ export function Footer() {
               );
             })}
           </div>
+        </div>
+        <div className="border-t border-white/10 pt-5 text-sm font-semibold text-slate-300 md:col-span-2">
+          <p>&copy; {new Date().getFullYear()} CrushingT1</p>
         </div>
       </div>
     </footer>

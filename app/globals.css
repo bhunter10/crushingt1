@@ -121,13 +121,13 @@ a {
 }
 
 .nav-link {
-  color: #334155;
+  color: #ffffff;
   font-size: 0.94rem;
   font-weight: 750;
 }
 
 .nav-link:hover {
-  color: #05668d;
+  color: #87e8ff;
 }
 
 .mobile-menu-button {
@@ -138,9 +138,9 @@ a {
   align-items: center;
   justify-content: center;
   border-radius: 8px;
-  border: 1px solid rgba(17, 34, 53, 0.18);
-  background: white;
-  color: #112235;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: #000000;
+  color: #ffffff;
   list-style: none;
 }
 
@@ -177,9 +177,9 @@ a {
   overflow: hidden;
   background:
     radial-gradient(circle at 78% 28%, rgba(242, 100, 75, 0.18), transparent 18rem),
-    radial-gradient(circle at 86% 72%, rgba(247, 181, 56, 0.14), transparent 15rem),
-    radial-gradient(circle at 18% 22%, rgba(0, 166, 166, 0.2), transparent 21rem),
-    linear-gradient(135deg, #07111f 0%, #0a1c2c 46%, #102b3f 100%);
+    radial-gradient(circle at 86% 72%, rgba(247, 181, 56, 0.16), transparent 15rem),
+    radial-gradient(circle at 18% 22%, rgba(0, 166, 166, 0.24), transparent 21rem),
+    linear-gradient(135deg, #0b3356 0%, #0f4f78 48%, #176b8f 100%);
 }
 
 .hero-science::before,
@@ -202,8 +202,8 @@ a {
 .hero-science::after {
   z-index: -1;
   background:
-    linear-gradient(90deg, rgba(7, 17, 31, 0.92) 0%, rgba(7, 17, 31, 0.7) 42%, rgba(7, 17, 31, 0.36) 100%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 42%, rgba(0, 0, 0, 0.18));
+    linear-gradient(90deg, rgba(5, 31, 54, 0.84) 0%, rgba(5, 45, 72, 0.62) 42%, rgba(5, 58, 86, 0.22) 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 42%, rgba(0, 0, 0, 0.12));
 }
 
 .hero-science > div {
