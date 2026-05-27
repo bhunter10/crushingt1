@@ -1,9 +1,6 @@
-import Link from "next/link";
-import { ArrowRight, ShoppingBag } from "lucide-react";
-import { Card } from "@/components/Card";
 import { PageHero } from "@/components/PageHero";
+import { PrintifyProductGrid } from "@/components/PrintifyProductGrid";
 import { Section } from "@/components/Section";
-import { merchItems } from "@/lib/content";
 
 export default function ShopPage() {
   return (
@@ -15,13 +12,8 @@ export default function ShopPage() {
         intro="Shop our merch."
         backgroundImage="/images/hero-shop-banner-v2.png"
       />
-      <Section
-        eyebrow=""
-        title=""
-        intro=""
-      >
-        
-        {null}
+      <Section eyebrow="" title="" intro="">
+        <PrintifyProductGrid />
       </Section>
     </>
   );
