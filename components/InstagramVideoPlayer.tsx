@@ -47,7 +47,7 @@ export function InstagramVideoPlayer({ title, videoUrl, poster }: InstagramVideo
           aria-label={`Play ${title}`}
           className="absolute left-1/2 top-1/2 z-20 grid h-20 w-20 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-white/95 text-coral shadow-[0_18px_42px_rgba(17,34,53,0.24)] transition group-hover:scale-105"
         >
-          <Play className="ml-1 h-9 w-9 fill-current" aria-hidden="true" />
+          <Play className="ml-1 h-11 w-11 fill-current" aria-hidden="true" />
         </button>
       ) : null}
     </div>

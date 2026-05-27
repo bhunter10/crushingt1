@@ -1,9 +1,14 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { HandHeart, Menu } from "lucide-react";
 import { navItems } from "@/lib/content";
 
 export function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white backdrop-blur">
       <nav className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3 sm:px-6 lg:px-8" aria-label="Main navigation">
@@ -29,13 +34,13 @@ export function Header() {
             Support
           </Link>
         </div>
-        <details className="relative lg:hidden">
+        <details className="relative lg:hidden" open={isMenuOpen} onToggle={(event) => setIsMenuOpen(event.currentTarget.open)}>
           <summary className="mobile-menu-button" aria-label="Open navigation">
             <Menu className="h-5 w-5" />
           </summary>
           <div className="absolute right-0 mt-3 w-72 rounded-lg border border-slate-200 bg-white p-3 shadow-soft">
             {navItems.map((item) => (
-              <Link key={item.href} href={item.href} className="block rounded-md px-3 py-3 font-semibold text-slate-700 hover:bg-mist">
+              <Link key={item.href} href={item.href} className="block rounded-md px-3 py-3 font-semibold text-slate-700 hover:bg-mist" onClick={() => setIsMenuOpen(false)}>
                 {item.label}
               </Link>
             ))}

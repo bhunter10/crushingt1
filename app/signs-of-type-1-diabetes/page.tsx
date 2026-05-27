@@ -9,7 +9,6 @@ import {
   Eye,
   Frown,
   Heart,
-  ShieldCheck,
   Siren,
   Syringe,
   Toilet,
@@ -158,7 +157,7 @@ export default function SignsOfType1DiabetesPage() {
                 Notice the warning signs of Type 1 diabetes and ask for a glucose check.
               </p>
             </div>
-            <div className="relative ml-auto mt-6 h-80 max-w-2xl lg:absolute lg:right-0 lg:top-0 lg:mt-0 lg:h-[29rem] lg:w-[58%] lg:max-w-none">
+            <div className="relative -mx-6 mt-6 h-96 sm:mx-0 sm:ml-auto sm:h-80 sm:max-w-2xl lg:absolute lg:right-0 lg:top-0 lg:mt-0 lg:h-[29rem] lg:w-[58%] lg:max-w-none">
               <Image
                 src="/images/learn-signs-water-hero.png"
                 alt="Child drinking water"
@@ -214,7 +213,7 @@ export default function SignsOfType1DiabetesPage() {
             </div>
           </div>
 
-          <div className="grid gap-6 bg-[#073260] px-6 py-8 text-white sm:px-10 md:grid-cols-[1fr_auto] md:items-center lg:px-14">
+          <div className="bg-[#073260] px-6 py-8 text-white sm:px-10 lg:px-14">
             <div className="flex items-start gap-4">
               <Heart className="mt-1 h-12 w-12 flex-none text-white" aria-hidden="true" />
               <div>
@@ -224,10 +223,6 @@ export default function SignsOfType1DiabetesPage() {
                 </p>
               </div>
             </div>
-            <Link href="/contact" className="btn bg-white text-[#073260]">
-              Download & Share
-              <ShieldCheck className="h-4 w-4" />
-            </Link>
           </div>
 
           <div className="border-t border-slate-200 px-6 py-6 sm:px-10 lg:px-14">
