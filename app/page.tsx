@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, HeartPulse, Newspaper, ShieldCheck } from "lucide-react";
+import { ArrowRight, BookOpen, Microscope, ShieldCheck } from "lucide-react";
 import { Section } from "@/components/Section";
 
 export default function Home() {
@@ -27,11 +27,7 @@ export default function Home() {
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link href="/news" className="btn border-white/25 bg-white/10 text-white hover:bg-white/15">
-                <Newspaper className="h-4 w-4" />
-                News
-              </Link>
-              <Link href="/news" className="btn border-white/25 bg-white/10 text-white hover:bg-white/15">
-                <HeartPulse className="h-4 w-4" />
+                <Microscope className="h-4 w-4" />
                 Explore Breakthroughs
               </Link>
             </div>
@@ -47,7 +43,7 @@ export default function Home() {
               </div>
               <div className="grid gap-3 sm:grid-cols-2">
                 <div className="meter">
-                  <HeartPulse className="h-6 w-6 text-coral" />
+                  <BookOpen className="h-6 w-6 text-coral" />
                   <span className="text-sm font-black uppercase text-coral">Educate</span>
                   <strong>Clear Type 1 diabetes knowledge for families and communities</strong>
                 </div>
