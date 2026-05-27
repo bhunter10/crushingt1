@@ -1,6 +1,7 @@
 "use client";
 
 import { PlayCircle } from "lucide-react";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 type YouTubeVideo = {
@@ -106,7 +107,12 @@ export function YouTubeVideoGrid({ playlistId }: YouTubeVideoGridProps) {
               onClick={() => setActiveVideoId(video.id)}
               aria-label={`Play ${video.title}`}
             >
-              <img src={`https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`} alt="" loading="lazy" />
+              <Image
+                src={`https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`}
+                alt=""
+                width={480}
+                height={360}
+              />
               <span className="youtube-video-play">
                 <PlayCircle aria-hidden="true" />
               </span>

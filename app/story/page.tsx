@@ -31,7 +31,7 @@ export default function StoryPage() {
             </div>
             <div className="space-y-5 text-lg leading-9 text-slate-700">
               <p>
-                CrushingT1 began with the kind of moment that changes a family's life: learning the language of blood sugar, insulin, symptoms, devices, appointments, and constant decisions all at once.
+                CrushingT1 began with the kind of moment that changes a family&apos;s life: learning the language of blood sugar, insulin, symptoms, devices, appointments, and constant decisions all at once.
               </p>
               <p>
                 The foundation exists to turn that experience outward. Through education, storytelling, and community support, CrushingT1 helps more people recognize the signs, understand the daily weight of T1D, and rally around families living with it.
