@@ -2,8 +2,10 @@ import Link from "next/link";
 import { navItems, socialLinks } from "@/lib/content";
 
 const socialButtonStyles = [
-  "bg-[#ff0000] text-white hover:bg-[#d90000]",
-  "bg-gradient-to-br from-[#833ab4] via-[#fd1d1d] to-[#fcb045] text-white hover:brightness-110"
+  "bg-[#1877F2] text-white hover:bg-[#1464d8]",
+  "bg-gradient-to-br from-[#833ab4] via-[#fd1d1d] to-[#fcb045] text-white hover:brightness-110",
+  "bg-zinc-700 text-white hover:bg-zinc-600",
+  "bg-[#ff0000] text-white hover:bg-[#d90000]"
 ];
 
 export function Footer() {

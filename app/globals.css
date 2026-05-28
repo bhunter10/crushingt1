@@ -405,6 +405,16 @@ a {
   padding: 1.25rem;
 }
 
+.shop-product-copy {
+  flex: 1;
+}
+
+.shop-product-action {
+  margin-top: auto;
+  width: 100%;
+  justify-content: center;
+}
+
 .youtube-video-grid {
   display: grid;
   gap: 1rem;

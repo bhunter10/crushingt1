@@ -1,6 +1,8 @@
+import { TikTokIcon } from "@/components/TikTokIcon";
 import {
   BookOpen,
   CalendarHeart,
+  Facebook,
   HandHeart,
   HeartPulse,
   Instagram,
@@ -26,16 +28,28 @@ export const navItems = [
 
 export const socialLinks = [
   {
-    href: "https://www.youtube.com/@CrushingT1",
-    label: "YouTube",
-    icon: Youtube,
-    text: "Latest uploads, Shorts, awareness clips, and longer education videos from CrushingT1."
+    href: "https://www.facebook.com/share/18r8L7bWJK/?mibextid=wwXIfr",
+    label: "Facebook",
+    icon: Facebook,
+    text: "Community updates and awareness posts from CrushingT1 on Facebook."
   },
   {
     href: "https://www.instagram.com/crushingt1/",
     label: "Instagram",
     icon: Instagram,
     text: "Short-form education, community updates, and campaign videos from CrushingT1."
+  },
+  {
+    href: "https://www.tiktok.com/@crushingt1?_r=1&_t=ZP-96irEfBtnZ9",
+    label: "TikTok",
+    icon: TikTokIcon,
+    text: "Short-form videos and awareness clips from CrushingT1 on TikTok."
+  },
+  {
+    href: "https://www.youtube.com/@CrushingT1",
+    label: "YouTube",
+    icon: Youtube,
+    text: "Latest uploads, Shorts, awareness clips, and longer education videos from CrushingT1."
   }
 ];
 

@@ -56,19 +56,21 @@ export async function PrintifyProductGrid() {
             )}
           </Link>
           <div className="shop-product-body">
-            <h3 className="text-xl font-bold text-ink">
-              <Link href={product.url} target="_blank" rel="noopener noreferrer" className="hover:text-coral">
-                {product.title}
-              </Link>
-            </h3>
-            {product.price ? <p className="mt-2 text-lg font-semibold text-coral">{product.price}</p> : null}
+            <div className="shop-product-copy">
+              <h3 className="text-xl font-bold text-ink">
+                <Link href={product.url} target="_blank" rel="noopener noreferrer" className="hover:text-coral">
+                  {product.title}
+                </Link>
+              </h3>
+              {product.price ? <p className="mt-2 text-lg font-semibold text-coral">{product.price}</p> : null}
+            </div>
             <Link
               href={product.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-primary mt-4 inline-flex"
+              className="btn btn-primary shop-product-action"
             >
-              View product
+              View details
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>

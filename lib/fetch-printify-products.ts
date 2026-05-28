@@ -1,9 +1,17 @@
 import { PRINTIFY_STORE_URL, type PrintifyProduct } from "@/lib/printify-store";
 
-const REVALIDATE_SECONDS = 3600;
+/** How long production caches the Printify catalog before refetching. */
+const REVALIDATE_SECONDS = 60;
 
 function decodeHtmlEntities(value: string) {
-  return value.replaceAll("&amp;", "&");
+  return value
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/&apos;/g, "'")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&#x([0-9a-f]+);/gi, (_, hex) => String.fromCodePoint(parseInt(hex, 16)))
+    .replace(/&#(\d+);/g, (_, decimal) => String.fromCodePoint(Number(decimal)));
 }
 
 function parseProducts(html: string, storeUrl: string): PrintifyProduct[] {
@@ -14,7 +22,8 @@ function parseProducts(html: string, storeUrl: string): PrintifyProduct[] {
     const slug = slugMatch?.[1] ?? null;
 
     const titleMatch = html.match(new RegExp(`href="/product/${id}"[^>]*>([^<]+)</a>`));
-    const title = titleMatch?.[1].trim() ?? (slug ? slug.replace(/-/g, " ") : `Product ${id}`);
+    const rawTitle = titleMatch?.[1].trim() ?? (slug ? slug.replace(/-/g, " ") : `Product ${id}`);
+    const title = decodeHtmlEntities(rawTitle);
 
     const url = slug ? `${storeUrl}/product/${id}/${slug}` : `${storeUrl}/product/${id}`;
 
@@ -39,8 +48,15 @@ function parseProducts(html: string, storeUrl: string): PrintifyProduct[] {
 
 export async function fetchPrintifyProducts(): Promise<PrintifyProduct[]> {
   const storeUrl = PRINTIFY_STORE_URL.replace(/\/$/, "");
+  const isDev = process.env.NODE_ENV === "development";
   const response = await fetch(`${storeUrl}/products`, {
-    next: { revalidate: REVALIDATE_SECONDS }
+    ...(isDev
+      ? { cache: "no-store" }
+      : { next: { revalidate: REVALIDATE_SECONDS } }),
+    headers: {
+      // Avoid serving a stale HTML snapshot from Printify's edge cache.
+      "Cache-Control": "no-cache"
+    }
   });
 
   if (!response.ok) {
