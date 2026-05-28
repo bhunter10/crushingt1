@@ -1,4 +1,4 @@
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 
 export type ContactFormPayload = {
   name: string;
@@ -11,32 +11,24 @@ export type ContactFormPayload = {
 const contactTo = "crushingt1foundation@gmail.com";
 
 export function isContactEmailConfigured() {
-  return Boolean(process.env.SMTP_USER && process.env.SMTP_PASS);
+  return Boolean(process.env.RESEND_API_KEY);
 }
 
 export async function sendContactEmail(payload: ContactFormPayload) {
-  const user = process.env.SMTP_USER;
-  const pass = process.env.SMTP_PASS;
+  const apiKey = process.env.RESEND_API_KEY;
 
-  if (!user || !pass) {
+  if (!apiKey) {
     throw new Error("Email is not configured.");
   }
 
-  const host = process.env.SMTP_HOST ?? "smtp.gmail.com";
-  const port = Number(process.env.SMTP_PORT ?? "465");
   const to = process.env.CONTACT_TO ?? contactTo;
-
-  const transporter = nodemailer.createTransport({
-    host,
-    port,
-    secure: port === 465,
-    auth: { user, pass }
-  });
+  const from = process.env.CONTACT_FROM ?? "CrushingT1 Website <onboarding@resend.dev>";
+  const resend = new Resend(apiKey);
 
   const phoneLine = payload.phone ? `Phone: ${payload.phone}` : null;
 
-  await transporter.sendMail({
-    from: `"CrushingT1 Website" <${user}>`,
+  const result = await resend.emails.send({
+    from,
     to,
     replyTo: payload.email,
     subject: `CrushingT1 website message — ${payload.interest}`,
@@ -52,4 +44,8 @@ export async function sendContactEmail(payload: ContactFormPayload) {
       .filter(Boolean)
       .join("\n")
   });
+
+  if (result.error) {
+    throw new Error(result.error.message);
+  }
 }
