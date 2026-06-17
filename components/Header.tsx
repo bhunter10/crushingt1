@@ -24,7 +24,7 @@ export function Header() {
           />
         </Link>
         <div className="hidden items-center gap-4 lg:flex xl:gap-5">
-          {navItems.slice(1).map((item) => (
+          {navItems.map((item) => (
             <Link key={item.href} href={item.href} className="nav-link">
               {item.label}
             </Link>

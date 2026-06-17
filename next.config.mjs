@@ -11,6 +11,13 @@ const nextConfig = {
         hostname: "images-api.printify.com"
       }
     ]
+  },
+  webpack(config, { isServer }) {
+    if (isServer) {
+      config.output.chunkFilename = "chunks/[name].js";
+    }
+
+    return config;
   }
 };
 
