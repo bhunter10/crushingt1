@@ -9,11 +9,11 @@ export default function Home() {
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-12 sm:px-6 lg:grid-cols-[1fr_0.9fr] lg:px-8 lg:py-18">
           <div>
             <p className="hero-kicker">
-              <span className="text-pink-500">Educating</span>
+              <span className="text-pink-500">Our Destiny</span>
               <span className="kicker-divider bg-amber" />
-              <span className="text-amber">Supporting</span>
+              <span className="text-amber">Our Fight</span>
               <span className="kicker-divider bg-green-500" />
-              <span className="text-green-500">Empowering</span>
+              <span className="text-green-500">Our Cure</span>
             </p>
             <h1 className="mt-4 text-5xl font-black leading-none text-white sm:text-6xl lg:text-7xl">
               Welcome
